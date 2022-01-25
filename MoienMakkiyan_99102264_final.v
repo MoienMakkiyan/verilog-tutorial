@@ -30,7 +30,21 @@ module mymodule(in1,in2,Clock,reset,out);
                 isInitialized = 1;
             end
             if (isInitialized == 1) begin
+                if (in1==in2) begin
+                    stack[0]=stack[1];
+                    stack[1]=stack[2];
+                    stack[2]=stack[3];
+                    stack[3]=1;
+                end
+                else begin
+                    stack[0]=stack[1];
+                    stack[1]=stack[2];
+                    stack[2]=stack[3];
+                    stack[3]=0;
+                end
+                counter = 4'b0000;
                 
+                out = counter;
             end
         end
     end
