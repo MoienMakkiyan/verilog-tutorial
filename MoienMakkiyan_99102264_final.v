@@ -43,7 +43,18 @@ module mymodule(in1,in2,Clock,reset,out);
                     stack[3]=0;
                 end
                 counter = 4'b0000;
-                
+                if (stack[0]==1) begin
+                    counter = counter + 4'b0001;
+                end
+                if (stack[1]==1) begin
+                    counter = counter + 4'b0001;
+                end
+                if (stack[2]==1) begin
+                    counter = counter + 4'b0001;
+                end
+                if (stack[3]==1) begin
+                    counter = counter + 4'b0001;
+                end
                 out = counter;
             end
         end
